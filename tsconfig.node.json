@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "declaration": true,
+    "lib": [
+      "ES2022",
+      "DOM"
+    ]
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+  ]
+}

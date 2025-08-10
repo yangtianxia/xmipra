@@ -1,0 +1,12 @@
+@overlay-cls: ~'xmi-overlay';
+
+page {
+  --xmi-overlay-layer: 701;
+  --xmi-overlay-bg: ~'theme(backgroundColor.mask)';
+}
+
+.@{overlay-cls} {
+  @apply fixed left-0 top-0 size-full;
+  background: var(--xmi-overlay-bg);
+  z-index: var(--xmi-overlay-layer);
+}

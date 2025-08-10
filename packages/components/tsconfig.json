@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.app",
+  "compilerOptions": {
+    "allowJs": true,
+    "noImplicitThis": true,
+    "target": "ES2015",
+  },
+  "include": [
+    "src/**/*",
+    "../../global.d.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/.*/"
+  ]
+}

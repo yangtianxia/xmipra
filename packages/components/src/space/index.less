@@ -1,0 +1,43 @@
+@space-cls: ~'xmi-space';
+
+.@{space-cls} {
+  @apply inline-flex;
+
+  &--horizontal {
+    .@{space-cls}__item {
+      @apply flex items-center;
+    }
+  }
+
+  &--vertical {
+    @apply flex-col;
+  }
+
+  &--align-baseline {
+    @apply items-baseline;
+  }
+
+  &--align-start {
+    @apply items-start;
+  }
+
+  &--align-end {
+    @apply items-end;
+  }
+
+  &--align-center {
+    @apply items-center;
+  }
+
+  &--wrap {
+    @apply flex-wrap;
+  }
+
+  &--fill {
+    @apply flex;
+  }
+
+  &__item:empty {
+    @apply hidden;
+  }
+}

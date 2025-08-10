@@ -1,0 +1,35 @@
+.hairline-common() {
+  @apply pointer-events-none absolute box-border origin-center;
+  content: ' ';
+}
+
+.hairline (@color: ~'theme(borderColor.base)') {
+  .hairline-common();
+
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 solid @color;
+  transform: scale(0.5);
+}
+
+.hairline-top (@color: ~'theme(borderColor.base)', @left: 0, @right: 0) {
+  .hairline-common();
+
+  top: 0;
+  right: @right;
+  left: @left;
+  border-top: 1rpx solid @color;
+  transform: scale-y(0.5);
+}
+
+.hairline-bottom (@color: ~'theme(borderColor.base)', @left: 0, @right: 0) {
+  .hairline-common();
+
+  bottom: 0;
+  left: @left;
+  right: @right;
+  border-bottom: 1rpx solid @color;
+  transform: scale-y(0.5);
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2015",
+    "module": "NodeNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "lib": [
+      "ES2015",
+      "DOM"
+    ]
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+  ]
+}

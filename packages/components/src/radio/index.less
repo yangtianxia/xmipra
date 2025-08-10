@@ -1,0 +1,78 @@
+@radio-cls: ~'xmi-radio';
+
+page {
+  --xmi-radio-font-size: ~'theme(fontSize.h3)';
+  --xmi-radio-border-color: ~'theme(colors.gray.300)';
+  --xmi-radio-label-color: ~'theme(textColor.DEFAULT)';
+  --xmi-radio-label-font-size: ~'theme(fontSize.lg)';
+  --xmi-radio-label-margin: ~'theme(margin.2)';
+  --xmi-radio-checked-icon-color: ~'theme(textColor.primary.DEFAULT)';
+  --xmi-radio-disabled-icon-color: var(--xmi-radio-border-color);
+  --xmi-radio-disabled-label-color: ~'theme(textColor.secondary)';
+  --xmi-radio-disabled-bg: ~'theme(borderColor.secondary)';
+}
+
+.@{radio-cls} {
+  @apply flex select-none items-center overflow-hidden;
+
+  &--horizontal {
+    @apply ~'mr-2.5';
+  }
+
+  &__icon {
+    @apply box-border flex flex-none shrink-0 items-center justify-center leading-none text-transparent;
+    width: 0.9em;
+    height: 0.9em;
+    font-size: var(--xmi-radio-font-size);
+    border: 1rpx solid var(--xmi-radio-border-color);
+    transition-duration: ~'theme(transitionDuration.fast)';
+    transition-property: color, border-color, background-color;
+
+    &-check {
+      @apply bg-current;
+      width: 0.6em;
+      height: 0.6em;
+      mask-image: var(--xmi-check-icon);
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+
+    &--round {
+      @apply rounded-full;
+    }
+
+    &--square {
+      @apply rounded-sm;
+    }
+
+    &--checked {
+      @apply text-white;
+      border-color: var(--xmi-radio-checked-icon-color);
+      background-color: var(--xmi-radio-checked-icon-color);
+    }
+
+    &--disabled {
+      border-color: var(--xmi-radio-disabled-icon-color);
+      background-color: var(--xmi-radio-disabled-bg);
+    }
+
+    &--disabled&--checked {
+      color: var(--xmi-radio-disabled-icon-color);
+    }
+  }
+
+  &__label {
+    margin-left: var(--xmi-radio-label-margin);
+    color: var(--xmi-radio-label-color);
+    font-size: var(--xmi-radio-label-font-size);
+    line-height: var(--xmi-radio-font-size);
+
+    &--left {
+      margin: 0 var(--xmi-radio-label-margin) 0 0;
+    }
+
+    &--disabled {
+      color: var(--xmi-radio-disabled-label-color);
+    }
+  }
+}

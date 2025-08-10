@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "allowJs": true,
+    "noImplicitThis": true,
+    "target": "ES2015",
+    "module": "nodenext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
+    "paths": {
+      "~/*": [
+        "./"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "components/*": [
+        "../packages/components/src/*"
+      ],
+      "xmipra/*": [
+        "../packages/xmipra/src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "types/**/*",
+    "dist/**/*.d.ts",
+    "../packages/components/src/**/*",
+    "../packages/xmipra/src/**/*",
+  ],
+  "exclude": [
+    "**/node_modules/*",
+    "**/__tests__/*"
+  ],
+}

@@ -1,0 +1,28 @@
+{
+  "root": false,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "plugin:vue/vue3-essential",
+    "@vue/eslint-config-typescript",
+    "@vue/eslint-config-prettier/skip-formatting",
+    "taro/vue3",
+    "@vant"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-namespace": [
+      "error",
+      {
+        "allowDeclarations": true
+      }
+    ]
+  }
+}

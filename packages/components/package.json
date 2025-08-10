@@ -1,0 +1,85 @@
+{
+  "name": "@xmipra/components",
+  "version": "0.0.0",
+  "description": "Miniprogram development components.",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "style": "./lib/index.css",
+  "types": "./lib/index.d.ts",
+  "sideEffects": [
+    "./es/**/style/*",
+    "./lib/**/style/*",
+    "*.css",
+    "*.less"
+  ],
+  "web-types": "./lib/web-types.json",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf ./es ./lib",
+    "lint": "eslint ./src --ext .ts,.tsx --fix",
+    "format": "prettier ./src --write",
+    "build:bundle": "vant-cli build",
+    "build": "npm run lint && npm run build:bundle"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "xmipra",
+    "@xmipra/components",
+    "components",
+    "tarojs",
+    "vue"
+  ],
+  "license": "MIT",
+  "author": "yangtianxia <1304082170@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangtianxia/xmipra.git",
+    "directory": "packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/yangtianxia/xmipra/issues"
+  },
+  "homepage": "https://github.com/yangtianxia/xmipra#readme",
+  "peerDependencies": {
+    "@tarojs/components": "4.0.13",
+    "@tarojs/taro": "4.0.13",
+    "@txjs/bem": "^1.1.0",
+    "@txjs/bool": "^1.0.5",
+    "@txjs/shared": "^1.0.7",
+    "@txjs/types": "^1.1.0",
+    "@types/extend": "^3.0.4",
+    "@vant/icons": "^3.0.2",
+    "extend": "^3.0.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@tarojs/components": "4.0.13",
+    "@tarojs/taro": "4.0.13",
+    "@txjs/bem": "^1.1.0",
+    "@txjs/bool": "^1.0.5",
+    "@txjs/shared": "^1.0.7",
+    "@txjs/types": "^1.1.0",
+    "@types/extend": "^3.0.4",
+    "@vant/cli": "^7.1.0",
+    "@vant/icons": "^3.0.2",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "babel-preset-taro": "4.0.13",
+    "eslint": "^8.57.0",
+    "eslint-config-taro": "4.0.13",
+    "eslint-plugin-vue": "^8.7.1",
+    "extend": "^3.0.2",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.17",
+    "vue": "^3.5.13"
+  },
+  "dependencies": {
+    "xmipra": "workspace:*"
+  }
+}

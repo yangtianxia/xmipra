@@ -1,0 +1,10 @@
+{
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "bigPackageSizeSupport": true,
+    "autoPush": true,
+    "mockLogin": true,
+    "compileHotReLoad": true
+  }
+}

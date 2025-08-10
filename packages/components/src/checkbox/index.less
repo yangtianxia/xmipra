@@ -1,0 +1,78 @@
+@checkbox-cls: ~'xmi-checkbox';
+
+page {
+  --xmi-checkbox-font-size: ~'theme(fontSize.h3)';
+  --xmi-checkbox-border-color: ~'theme(colors.gray.300)';
+  --xmi-checkbox-label-color: ~'theme(textColor.DEFAULT)';
+  --xmi-checkbox-label-font-size: ~'theme(fontSize.lg)';
+  --xmi-checkbox-label-margin: ~'theme(margin.2)';
+  --xmi-checkbox-checked-icon-color: ~'theme(textColor.primary.DEFAULT)';
+  --xmi-checkbox-disabled-icon-color: var(--xmi-checkbox-border-color);
+  --xmi-checkbox-disabled-label-color: ~'theme(textColor.secondary)';
+  --xmi-checkbox-disabled-bg: ~'theme(borderColor.secondary)';
+}
+
+.@{checkbox-cls} {
+  @apply flex select-none items-center overflow-hidden;
+
+  &--horizontal {
+    @apply ~'mr-2.5';
+  }
+
+  &__icon {
+    @apply box-border flex flex-none shrink-0 items-center justify-center leading-none text-transparent;
+    width: 0.9em;
+    height: 0.9em;
+    font-size: var(--xmi-checkbox-font-size);
+    border: 1rpx solid var(--xmi-checkbox-border-color);
+    transition-duration: ~'theme(transitionDuration.fast)';
+    transition-property: color, border-color, background-color;
+
+    &-check {
+      @apply bg-current;
+      width: 0.6em;
+      height: 0.6em;
+      mask-image: var(--xmi-check-icon);
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+
+    &--round {
+      @apply rounded-full;
+    }
+
+    &--square {
+      @apply rounded-sm;
+    }
+
+    &--checked {
+      @apply text-white;
+      border-color: var(--xmi-checkbox-checked-icon-color);
+      background-color: var(--xmi-checkbox-checked-icon-color);
+    }
+
+    &--disabled {
+      border-color: var(--xmi-checkbox-disabled-icon-color);
+      background-color: var(--xmi-checkbox-disabled-bg);
+    }
+
+    &--disabled&--checked {
+      color: var(--xmi-checkbox-disabled-icon-color);
+    }
+  }
+
+  &__label {
+    margin-left: var(--xmi-checkbox-label-margin);
+    color: var(--xmi-checkbox-label-color);
+    font-size: var(--xmi-checkbox-label-font-size);
+    line-height: var(--xmi-checkbox-font-size);
+
+    &--left {
+      margin: 0 var(--xmi-checkbox-label-margin) 0 0;
+    }
+
+    &--disabled {
+      color: var(--xmi-checkbox-disabled-label-color);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@scaffold-cls: ~'xmi-scaffold';
+@scaffold-body-cls: ~'xmi-scaffold-body';
+
+page {
+  --xmi-scaffold-z-index: 2001;
+  --xmi-scaffold-loading-bg: ~'theme(backgroundColor.layout)';
+  --xmi-scaffold-bottom: ~'theme(padding.4)';
+  --xmi-scaffold-padding-top: ~'theme(padding.3)';
+  --xmi-scaffold-bottom-padding: 0;
+  --xmi-scaffold-horizontal-padding: ~'theme(padding.3)';
+  --xmi-scaffold-bg: ~'theme(backgroundColor.layout)';
+}
+
+.@{scaffold-cls} {
+  @apply relative box-border flex flex-col flex-nowrap;
+  background-color: var(--xmi-scaffold-bg);
+
+  &:not(&--full-screen) {
+    @apply h-full;
+  }
+
+  &--full-screen {
+    @apply min-h-screen;
+  }
+
+  &__loading {
+    @apply absolute bottom-0 left-0 right-0 top-0 w-full;
+    z-index: var(--xmi-scaffold-z-index);
+    color: ~'theme(textColor.secondary)';
+    background-color: var(--xmi-scaffold-loading-bg);
+
+    &-inner {
+      @apply absolute bottom-0 left-0 right-0 top-0 box-border flex max-h-screen max-w-full flex-col;
+
+      &:not(&--custom) {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.@{scaffold-body-cls} {
+  @apply relative box-border min-w-0 flex-1 shrink-0;
+  padding: var(--xmi-scaffold-top-padding)
+    var(--xmi-scaffold-horizontal-padding) var(--xmi-scaffold-bottom-padding);
+
+  &--empty {
+    @apply p-0;
+    background-color: var(--xmi-scaffold-bg);
+
+    .xmi-result {
+      @apply absolute bottom-0 top-0 box-border h-4/5 w-full;
+    }
+  }
+
+  &--shrink {
+    @apply p-0;
+  }
+
+  &:not(&--full-height) {
+    @apply min-h-80;
+  }
+
+  &--full-height {
+    @apply h-full;
+
+    .xmi-result {
+      @apply h-full;
+    }
+  }
+}

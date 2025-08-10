@@ -1,0 +1,67 @@
+diff --git a/lib/compiler/compile-script.js b/lib/compiler/compile-script.js
+index f4a495e7720422dd6fe6a291db2c770ff1cd049f..bbdad2fcaed142988e5e909a359f4763670293d4 100644
+--- a/lib/compiler/compile-script.js
++++ b/lib/compiler/compile-script.js
+@@ -22,7 +22,16 @@ export async function compileScript(filePath, format) {
+         const babelResult = await babel.transformAsync(code, {
+             filename: filePath,
+             babelrc: false,
+-            presets: ['@babel/preset-typescript'],
++            presets: [
++              '@babel/preset-typescript',
++              [
++                'taro',
++                {
++                  framework: 'vue3',
++                  ts: true
++                },
++              ],
++            ],
+             plugins: [
+                 [
+                     '@vue/babel-plugin-jsx',
+diff --git a/lib/compiler/gen-package-entry.js b/lib/compiler/gen-package-entry.js
+index 7817a7b6ab9e7639b0486f5161c2a021a783006e..df7c130cd76d3d0597ccd773d20a6cb92104edb3 100644
+--- a/lib/compiler/gen-package-entry.js
++++ b/lib/compiler/gen-package-entry.js
+@@ -25,6 +25,7 @@ function genExports(names, pathResolver, namedExport) {
+             .join('\n');
+         return `
+   export {
++    componentNames,
+     install,
+     version,
+   };
+@@ -33,6 +34,7 @@ function genExports(names, pathResolver, namedExport) {
+     }
+     return `
+   export {
++    componentNames,
+     install,
+     version,
+     ${names.map(pascalize).join(',\n  ')}
+@@ -65,9 +67,12 @@ function install(app) {
+   });
+ }
+ 
++const componentNames = ${JSON.stringify(names)}
++
+ ${genExports(names, pathResolver, namedExport)}
+ 
+ export default {
++  componentNames,
+   install,
+   version
+ };
+diff --git a/package.json b/package.json
+index 392a9a3fceee60544171a8e0e405f6e0cedad108..a2d641869dee13b3bd7ef2406230dad9ab5b57bd 100644
+--- a/package.json
++++ b/package.json
+@@ -51,6 +51,7 @@
+     "@vitejs/plugin-vue": "^5.1.3",
+     "@vitejs/plugin-vue-jsx": "^4.0.1",
+     "@vue/babel-plugin-jsx": "^1.2.5",
++    "babel-preset-taro": "4.0.13",
+     "autoprefixer": "^10.4.20",
+     "commander": "^12.1.0",
+     "rslog": "^1.2.3",

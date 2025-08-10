@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode"
+  ]
+}

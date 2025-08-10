@@ -1,0 +1,26 @@
+export default defineAppConfig({
+  pages: [
+    'pages/index/index',
+    'pages/cell/index',
+    'pages/checkbox/index',
+    'pages/radio/index',
+    'pages/space/index',
+    'pages/action-sheet/index',
+    'pages/icon/index',
+    'pages/button/index',
+    'pages/grid/index',
+    'pages/result/index',
+    'pages/scaffold/index',
+    'pages/popup/index',
+  ],
+  window: {
+    backgroundTextStyle: 'light',
+    backgroundColor: '#f5f5f5',
+    navigationBarBackgroundColor: '#f5f5f5',
+    navigationBarTitleText: 'xmipra',
+    navigationBarTextStyle: 'black',
+    backgroundColorTop: '#f5f5f5',
+    backgroundColorBottom: '#f5f5f5',
+    backgroundColorContent: '#f5f5f5',
+  },
+})

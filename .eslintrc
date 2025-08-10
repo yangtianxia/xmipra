@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "import"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      },
+      "typescript": {}
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".js",
+        ".mjs",
+        ".cjs",
+        ".ts",
+        ".tsx"
+      ]
+    }
+  },
+  "rules": {
+    "camelcase": "off",
+    "eol-last": "error",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "quote-props": [
+      "off",
+      "always"
+    ],
+    "space-before-function-paren": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-empty-object-type": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": "off"
+  }
+}

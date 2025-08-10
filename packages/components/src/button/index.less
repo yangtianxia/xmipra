@@ -1,0 +1,180 @@
+@button-cls: ~'xmi-button';
+
+page {
+  --xmi-button-color: ~'theme(textColor.DEFAULT)';
+  --xmi-button-font-size: ~'theme(fontSize.lg)';
+  --xmi-button-height: ~'theme(height.10)';
+  --xmi-button-leading: ~'theme(lineHeight.heading5)';
+  --xmi-button-rounded: ~'theme(borderRadius.DEFAULT)';
+  --xmi-button-padding: 0 ~'theme(padding[3.5])';
+  --xmi-button-bg: ~'theme(backgroundColor.layout)';
+  --xmi-button-mini-height: ~'theme(height.6)';
+  --xmi-button-mini-padding: 0 ~'theme(padding.1)';
+  --xmi-button-mini-font-size: ~'theme(fontSize.sm)';
+  --xmi-button-small-height: ~'theme(height.8)';
+  --xmi-button-small-padding: 0 ~'theme(padding.2)';
+  --xmi-button-small-font-size: ~'theme(fontSize.md)';
+  --xmi-button-large-height: ~'theme(height.12)';
+  --xmi-button-plain-bg: ~'theme(backgroundColor.container)';
+  --xmi-button-disabled-opacity: ~'theme(opacity.60)';
+  --xmi-button-loading-opacity: ~'theme(opacity.60)';
+  --xmi-button-loading-size: ~'theme(fontSize.lg)';
+}
+
+@media (prefers-color-scheme: dark) {
+  page {
+    --xmi-button-plain-bg: ~'theme(colors.transparent)';
+  }
+}
+
+.@{button-cls} {
+  @apply relative m-0 box-border inline-flex cursor-pointer items-center justify-center whitespace-nowrap align-top font-semibold;
+  color: var(--xmi-button-color);
+  font-size: var(--xmi-button-font-size);
+  height: var(--xmi-button-height);
+  line-height: var(--xmi-button-leading);
+  border-radius: var(--xmi-button-rounded);
+  padding: var(--xmi-button-padding);
+  background-color: var(--xmi-button-bg);
+  transition: all ~'theme(transitionDuration.mid)'
+    ~'theme(transitionTimingFunction.in-out)';
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: auto;
+
+  &::after {
+    @apply border-0;
+  }
+
+  &::before {
+    @apply absolute left-0 top-0 inline-block h-full w-full bg-black opacity-0;
+    content: '';
+  }
+
+  &__active::before {
+    @apply opacity-20;
+  }
+
+  &--unclickable::before {
+    @apply hidden;
+  }
+
+  &--primary {
+    @apply bg-primary text-white;
+  }
+
+  &--danger {
+    @apply bg-error text-white;
+  }
+
+  &--warning {
+    @apply bg-warning text-white;
+  }
+
+  &--success {
+    @apply bg-success text-white;
+  }
+
+  &--plain {
+    background: var(--xmi-button-plain-bg);
+    border: 1px solid ~'theme(borderColor.base)';
+
+    &::before {
+      @apply bg-white;
+    }
+
+    &.@{button-cls} {
+      &__active::before {
+        @apply opacity-35;
+      }
+
+      &--primary {
+        @apply border-primary text-primary;
+      }
+
+      &--danger {
+        @apply text-error border-error;
+      }
+
+      &--warning {
+        @apply text-warning border-warning;
+      }
+
+      &--success {
+        @apply text-success border-success;
+      }
+    }
+  }
+
+  &--large {
+    height: var(--xmi-button-large-height);
+    --xmi-button-loading-size: ~'theme(fontSize.xl)';
+  }
+
+  &--small {
+    font-size: var(--xmi-button-small-font-size);
+    height: var(--xmi-button-small-height);
+    padding: var(--xmi-button-small-padding);
+    --xmi-button-loading-size: ~'theme(fontSize.md)';
+  }
+
+  &--mini {
+    height: var(--xmi-button-mini-height);
+    font-size: var(--xmi-button-mini-font-size);
+    padding: var(--xmi-button-mini-padding);
+    --xmi-button-loading-size: ~'theme(fontSize.md)';
+
+    &:not(.@{button-cls}--block) + .@{button-cls}--mini {
+      @apply ~'ml-1.5';
+    }
+  }
+
+  &--block {
+    @apply flex w-full;
+  }
+
+  &--round {
+    --xmi-button-rounded: ~'theme(borderRadius.full)';
+  }
+
+  &--square {
+    @apply rounded-none;
+  }
+
+  &--loading {
+    @apply cursor-not-allowed;
+    opacity: var(--xmi-button-loading-opacity);
+  }
+
+  &--disabled {
+    @apply cursor-not-allowed;
+    opacity: var(--xmi-button-disabled-opacity);
+  }
+
+  &__loading {
+    --xmi-loading-font-size: var(--xmi-button-loading-size);
+  }
+
+  &__icon {
+    @apply leading-none;
+    min-width: 1em;
+
+    &--arrow,
+    &--arrow-left {
+      margin-left: 0.1em !important;
+    }
+  }
+
+  &__text {
+    @apply inline;
+  }
+
+  &__loading + &__text,
+  &__icon + &__text {
+    margin-left: 0.4em;
+  }
+
+  &__text + &__loading,
+  &__text + &__icon {
+    margin-left: 0.4em;
+  }
+}

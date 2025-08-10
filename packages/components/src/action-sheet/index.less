@@ -1,0 +1,94 @@
+@import url('../style/hairline.less');
+
+@action-sheet-cls: ~'xmi-action-sheet';
+
+page {
+  --xmi-action-sheet-max-height: 80%;
+  --xmi-action-sheet-description-color: ~'theme(textColor.tertiary)';
+  --xmi-action-sheet-description-font-size: ~'theme(fontSize.lg)';
+  --xmi-action-sheet-description-leading: ~'theme(lineHeight.normal)';
+  --xmi-action-sheet-option-color: ~'theme(textColor.DEFAULT)';
+  --xmi-action-sheet-option-leading: ~'theme(lineHeight.normal)';
+  --xmi-action-sheet-option-label-color: ~'theme(textColor.tertiary)';
+  --xmi-action-sheet-option-label-font-size: ~'theme(fontSize.md)';
+  --xmi-action-sheet-option-label-leading: ~'theme(lineHeight.normal)';
+  --xmi-action-sheet-gap-height: ~'theme(height[2.5])';
+  --xmi-action-sheet-gap-bg: ~'theme(backgroundColor.layout)';
+  --xmi-action-sheet-cancel-color: ~'theme(textColor.DEFAULT)';
+}
+
+.@{action-sheet-cls} {
+  @apply flex flex-col overflow-hidden;
+  color: var(--xmi-action-sheet-option-color);
+  max-height: var(--xmi-action-sheet-max-height);
+
+  &__description {
+    @apply relative shrink-0 text-center;
+    padding: ~'theme(padding[3.5])' ~'theme(padding.4)';
+    color: var(--xmi-action-sheet-description-color);
+    font-size: var(--xmi-action-sheet-description-font-size);
+    line-height: var(--xmi-action-sheet-description-leading);
+
+    &::after {
+      .hairline-bottom();
+    }
+  }
+
+  &__content {
+    @apply min-h-0 flex-auto;
+  }
+
+  &__option,
+  &__cancel {
+    @apply bg-container h-auto rounded-none border-none font-normal;
+    padding: ~'theme(padding[3.5])' ~'theme(padding.4)';
+
+    &::before {
+      @apply content-none;
+    }
+
+    &.xmi-button__active {
+      @apply bg-gray-200;
+    }
+  }
+
+  &__option {
+    line-height: var(--xmi-action-sheet-option-leading);
+
+    &--unclickable {
+      background: none !important;
+    }
+
+    &-container {
+      @apply relative;
+
+      & + & {
+        &::after {
+          .hairline-top();
+        }
+      }
+    }
+
+    &-label {
+      @apply mt-1;
+      color: var(--xmi-action-sheet-option-label-color);
+      font-size: var(--xmi-action-sheet-option-label-font-size);
+      line-height: var(--xmi-action-sheet-option-label-leading);
+    }
+
+    .xmi-loading {
+      --loading-spinner-size: ~'theme(fontSize.2xl)';
+    }
+  }
+
+  &__gap {
+    @apply block;
+    height: var(--xmi-action-sheet-gap-height);
+    background-color: var(--xmi-action-sheet-gap-bg);
+  }
+
+  &__cancel {
+    @apply shrink-0;
+    color: var(--xmi-action-sheet-cancel-color);
+  }
+}

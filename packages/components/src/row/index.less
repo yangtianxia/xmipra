@@ -1,0 +1,50 @@
+@row-cls: ~'xmi-row';
+
+.@{row-cls} {
+  @apply box-border flex min-w-0 before:flex after:flex;
+  flex-flow: row wrap;
+
+  &--no-wrap {
+    @apply flex-nowrap;
+  }
+
+  &--start {
+    @apply justify-start;
+  }
+
+  &--center {
+    @apply justify-center;
+  }
+
+  &--end {
+    @apply justify-end;
+  }
+
+  &--space-between {
+    @apply justify-between;
+  }
+
+  &--space-around {
+    @apply justify-around;
+  }
+
+  &--space-evenly {
+    @apply justify-evenly;
+  }
+
+  &--top {
+    @apply items-start;
+  }
+
+  &--middle {
+    @apply items-center;
+  }
+
+  &--bottom {
+    @apply items-end;
+  }
+
+  &--stretch {
+    @apply items-stretch;
+  }
+}
