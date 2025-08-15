@@ -41,7 +41,7 @@ const seedToken: SeedToken = {
   fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 'Noto Color Emoji'`,
-  fontSize: 12,
+  fontSize: 14,
 
   // Motion
   motionUnit: 0.1,
