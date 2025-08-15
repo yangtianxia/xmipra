@@ -1,0 +1,14 @@
+@sticky-cls: ~'xmi-sticky';
+
+page {
+  --xmi-sticky-layer: 688;
+}
+
+.@{sticky-cls} {
+  @apply relative;
+
+  &--fixed {
+    @apply fixed;
+    z-index: var(--xmi-sticky-layer);
+  }
+}
