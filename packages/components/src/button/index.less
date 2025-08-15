@@ -2,7 +2,7 @@
 
 page {
   --xmi-button-color: ~'theme(textColor.DEFAULT)';
-  --xmi-button-font-size: ~'theme(fontSize.lg)';
+  --xmi-button-font-size: ~'theme(fontSize.md)';
   --xmi-button-height: ~'theme(height.10)';
   --xmi-button-leading: ~'theme(lineHeight.heading5)';
   --xmi-button-rounded: ~'theme(borderRadius.DEFAULT)';
@@ -10,15 +10,15 @@ page {
   --xmi-button-bg: ~'theme(backgroundColor.layout)';
   --xmi-button-mini-height: ~'theme(height.6)';
   --xmi-button-mini-padding: 0 ~'theme(padding.1)';
-  --xmi-button-mini-font-size: ~'theme(fontSize.sm)';
+  --xmi-button-mini-font-size: ~'theme(size[2.5])';
   --xmi-button-small-height: ~'theme(height.8)';
   --xmi-button-small-padding: 0 ~'theme(padding.2)';
-  --xmi-button-small-font-size: ~'theme(fontSize.md)';
+  --xmi-button-small-font-size: ~'theme(fontSize.sm)';
   --xmi-button-large-height: ~'theme(height.12)';
   --xmi-button-plain-bg: ~'theme(backgroundColor.container)';
   --xmi-button-disabled-opacity: ~'theme(opacity.60)';
   --xmi-button-loading-opacity: ~'theme(opacity.60)';
-  --xmi-button-loading-size: ~'theme(fontSize.lg)';
+  --xmi-button-loading-size: ~'theme(fontSize.md)';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +28,7 @@ page {
 }
 
 .@{button-cls} {
-  @apply relative m-0 box-border inline-flex cursor-pointer items-center justify-center whitespace-nowrap align-top font-semibold;
+  @apply relative m-0 box-border inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap align-top font-semibold;
   color: var(--xmi-button-color);
   font-size: var(--xmi-button-font-size);
   height: var(--xmi-button-height);
@@ -107,7 +107,7 @@ page {
 
   &--large {
     height: var(--xmi-button-large-height);
-    --xmi-button-loading-size: ~'theme(fontSize.xl)';
+    --xmi-button-loading-size: ~'theme(fontSize.lg)';
   }
 
   &--small {
@@ -121,7 +121,7 @@ page {
     height: var(--xmi-button-mini-height);
     font-size: var(--xmi-button-mini-font-size);
     padding: var(--xmi-button-mini-padding);
-    --xmi-button-loading-size: ~'theme(fontSize.md)';
+    --xmi-button-loading-size: ~'theme(fontSize.sm)';
 
     &:not(.@{button-cls}--block) + .@{button-cls}--mini {
       @apply ~'ml-1.5';
@@ -151,7 +151,7 @@ page {
   }
 
   &__loading {
-    --xmi-loading-font-size: var(--xmi-button-loading-size);
+    --xmi-loading-size: var(--xmi-button-loading-size);
   }
 
   &__icon {
