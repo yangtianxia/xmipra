@@ -3,7 +3,7 @@ import type {
   ElementAttrs,
   TransformReact2VueType,
   StandardProps,
-  ITouchEvent,
+  BaseEventOrig,
 } from '@tarojs/components/types/index.vue3'
 import type { UnknownCallback } from '@txjs/types'
 
@@ -26,7 +26,7 @@ export type VNodeChildFunc = (...args: any) => VNodeChild
 export type VNode = VNodeChildFunc | VNodeChild
 
 export interface EventExpand {
-  onTap?: UnknownCallback<ITouchEvent>
+  onTap?: UnknownCallback<BaseEventOrig>
 }
 
 export type JSXShim<T extends object> = EventExpand &

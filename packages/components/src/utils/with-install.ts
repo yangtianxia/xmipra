@@ -1,6 +1,7 @@
 import type { App, Component, CSSProperties } from 'vue'
 import extend from 'extend'
 import { camelize } from '@txjs/shared'
+import type { EventExpand } from './types'
 
 interface PropsExpand {
   style?: string | CSSProperties
@@ -12,7 +13,7 @@ interface CustomShim<T extends object> {
   }
 }
 
-type Shim = CustomShim<PropsExpand>
+type Shim = CustomShim<PropsExpand & EventExpand>
 
 export type WithInstall<T extends object, U extends object> = T &
   U &
