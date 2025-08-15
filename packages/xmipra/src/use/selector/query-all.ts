@@ -22,16 +22,16 @@ export function useSelectorQueryAll(
   /** 是否缓存 */
   let cached = false
   /** 是否已回调 */
-  let calledBack = false
+  let called = false
 
   const execCallback = (results: DOMRect[]) => {
-    if (callback && (alwaysCallback || !calledBack)) {
+    if (callback && (alwaysCallback || !called)) {
       callback(results)
-      calledBack = true
+      called = true
     }
   }
 
-  const getBoundingClientRect = async () => {
+  const getBoundingClientRect = () => {
     return new Promise<DOMRect[]>((resolve, reject) => {
       if (cache && cached) {
         resolve(rects.value)
