@@ -20,8 +20,15 @@ export default defineComponent({
           </Cell.Group>
           <Cell.Group inset title="展示组件">
             <Cell isLink title="Result 结果" url="/pages/result/index" />
+            <Cell isLink title="Sticky 粘性布局" url="/pages/sticky/index" />
+            <Cell isLink title="Alert 警告提示" url="/pages/alert/index" />
           </Cell.Group>
           <Cell.Group inset title="表单组件">
+            <Cell
+              isLink
+              title="Cascader 级联选择"
+              url="/pages/cascader/index"
+            />
             <Cell isLink title="Checkbox 复选框" url="/pages/checkbox/index" />
             <Cell isLink title="Radio 复选框" url="/pages/radio/index" />
           </Cell.Group>
@@ -31,6 +38,7 @@ export default defineComponent({
               title="ActionSheet 动作面板"
               url="/pages/action-sheet/index"
             />
+            <Cell isLink title="Loading 加载" url="/pages/loading/index" />
           </Cell.Group>
         </Scaffold.Body>
       </Scaffold>

@@ -22,6 +22,9 @@ const components = [
   'radio-group',
   'space',
   'action-sheet',
+  'alert',
+  'sticky',
+  'cascader',
   'button',
   'col',
   'icon',
@@ -66,6 +69,10 @@ export default defineConfig<'webpack5'>(async (merge, { mode }) => {
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
     },
     mini: {
+      miniCssExtractPluginOption: {
+        /** 忽略样式文件加载顺序 */
+        ignoreOrder: true,
+      },
       postcss: {
         htmltransform: {
           enable: true,

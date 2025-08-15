@@ -21,8 +21,8 @@ export default defineComponent({
       a4: true,
       a5: true,
       a6: true,
-      a7: [],
-      a8: true,
+      a7: true,
+      a8: [],
       a9: [],
       a10: [],
       a11: [],
@@ -69,25 +69,25 @@ export default defineComponent({
           </view>
           <view class="text-secondary text-md m-3">自定义大小</view>
           <view class="bg-container p-4">
-            <Checkbox iconSize={24} v-model:value={checkbox.a4}>
+            <Checkbox iconSize={24} v-model:value={checkbox.a5}>
               自定义大小
             </Checkbox>
           </view>
           <view class="text-secondary text-md m-3">左侧文本</view>
           <view class="bg-container flex flex-wrap gap-2 p-4">
-            <Checkbox labelPosition="left" v-model:value={checkbox.a5}>
+            <Checkbox labelPosition="left" v-model:value={checkbox.a6}>
               左侧文本
             </Checkbox>
           </view>
           <view class="text-secondary text-md m-3">禁用文本点击</view>
           <view class="bg-container flex flex-wrap gap-2 p-4">
-            <Checkbox labelDisabled v-model:value={checkbox.a6}>
+            <Checkbox labelDisabled v-model:value={checkbox.a7}>
               复选框
             </Checkbox>
           </view>
           <view class="text-secondary text-md m-3">复选框组</view>
           <view class="bg-container p-4">
-            <Checkbox.Group v-model:value={checkbox.a7}>
+            <Checkbox.Group v-model:value={checkbox.a8}>
               <view class="flex flex-col gap-2">
                 <Checkbox name="a">复选框a</Checkbox>
                 <Checkbox name="b">复选框b</Checkbox>

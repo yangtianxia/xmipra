@@ -48,6 +48,41 @@ const router = createRouter({
           },
         },
         {
+          name: 'alert',
+          path: '/alert/index',
+          meta: {
+            title: 'alert',
+          },
+        },
+        {
+          name: 'loading',
+          path: '/loading/index',
+          meta: {
+            title: 'loading',
+          },
+        },
+        {
+          name: 'overlay',
+          path: '/overlay/index',
+          meta: {
+            title: 'overlay',
+          },
+        },
+        {
+          name: 'sticky',
+          path: '/sticky/index',
+          meta: {
+            title: 'sticky',
+          },
+        },
+        {
+          name: 'cascader',
+          path: '/cascader/index',
+          meta: {
+            title: 'cascader',
+          },
+        },
+        {
           name: 'icon',
           path: '/icon/index',
           meta: {
