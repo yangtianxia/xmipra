@@ -1,13 +1,13 @@
 @radio-cls: ~'xmi-radio';
 
 page {
-  --xmi-radio-font-size: ~'theme(fontSize.h3)';
-  --xmi-radio-border-color: ~'theme(colors.gray.300)';
+  --xmi-radio-icon-size: ~'theme(size.5)';
+  --xmi-radio-icon-border-color: ~'theme(colors.gray.300)';
   --xmi-radio-label-color: ~'theme(textColor.DEFAULT)';
-  --xmi-radio-label-font-size: ~'theme(fontSize.lg)';
+  --xmi-radio-label-font-size: ~'theme(fontSize.md)';
   --xmi-radio-label-margin: ~'theme(margin.2)';
   --xmi-radio-checked-icon-color: ~'theme(textColor.primary.DEFAULT)';
-  --xmi-radio-disabled-icon-color: var(--xmi-radio-border-color);
+  --xmi-radio-disabled-icon-color: var(--xmi-radio-icon-border-color);
   --xmi-radio-disabled-label-color: ~'theme(textColor.secondary)';
   --xmi-radio-disabled-bg: ~'theme(borderColor.secondary)';
 }
@@ -23,8 +23,8 @@ page {
     @apply box-border flex flex-none shrink-0 items-center justify-center leading-none text-transparent;
     width: 0.9em;
     height: 0.9em;
-    font-size: var(--xmi-radio-font-size);
-    border: 1rpx solid var(--xmi-radio-border-color);
+    font-size: var(--xmi-radio-icon-size);
+    border: 1rpx solid var(--xmi-radio-icon-border-color);
     transition-duration: ~'theme(transitionDuration.fast)';
     transition-property: color, border-color, background-color;
 
@@ -32,9 +32,7 @@ page {
       @apply bg-current;
       width: 0.6em;
       height: 0.6em;
-      mask-image: var(--xmi-check-icon);
-      mask-repeat: no-repeat;
-      mask-size: contain;
+      mask: var(--xmi-check-icon) no-repeat 0 0 / contain;
     }
 
     &--round {

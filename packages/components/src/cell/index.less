@@ -6,24 +6,24 @@ page {
   --xmi-cell-padding-vertical: ~'theme(padding[2.5])';
   --xmi-cell-padding-horizontal: ~'theme(padding.3)';
   --xmi-cell-color: ~'theme(textColor.DEFAULT)';
-  --xmi-cell-font-size: ~'theme(fontSize.lg)';
+  --xmi-cell-font-size: ~'theme(fontSize.md)';
   --xmi-cell-leading: ~'theme(height.6)';
   --xmi-cell-bg: ~'theme(backgroundColor.container)';
   --xmi-cell-active-bg: ~'theme(backgroundColor.gray.200)';
   --xmi-cell-required-color: ~'theme(textColor.red.DEFAULT)';
   --xmi-cell-icon-color: ~'theme(textColor.DEFAULT)';
   --xmi-cell-value-color: ~'theme(textColor.tertiary)';
-  --xmi-cell-value-font-size: ~'theme(fontSize.lg)';
+  --xmi-cell-value-font-size: ~'theme(fontSize.md)';
   --xmi-cell-value-align: right;
   --xmi-cell-right-icon-color: ~'theme(textColor.tertiary)';
-  --xmi-cell-right-icon-size: ~'theme(fontSize.lg)';
+  --xmi-cell-right-icon-size: ~'theme(fontSize.md)';
   --xmi-cell-label-color: ~'theme(textColor.tertiary)';
-  --xmi-cell-label-font-size: ~'theme(fontSize.md)';
+  --xmi-cell-label-font-size: ~'theme(fontSize.sm)';
   --xmi-cell-label-leading: ~'theme(lineHeight.heading3)';
   --xmi-cell-large-padding-vertical: ~'theme(padding.3)';
-  --xmi-cell-large-font-size: ~'theme(fontSize.xl)';
-  --xmi-cell-large-value-font-size: ~'theme(fontSize.xl)';
-  --xmi-cell-large-label-font-size: ~'theme(fontSize.lg)';
+  --xmi-cell-large-font-size: ~'theme(fontSize.lg)';
+  --xmi-cell-large-value-font-size: ~'theme(fontSize.lg)';
+  --xmi-cell-large-label-font-size: ~'theme(fontSize.md)';
 }
 
 .@{cell-cls} {
@@ -39,7 +39,7 @@ page {
   }
 
   &--noborder::after {
-    display: none;
+    @apply border-0;
   }
 
   &--shrink {
