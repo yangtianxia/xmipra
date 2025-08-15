@@ -28,6 +28,26 @@ export default defineConfig(() => {
         page: '/pages/action-sheet/index',
       },
       {
+        title: 'alert',
+        page: '/pages/alert/index',
+      },
+      {
+        title: 'loading',
+        page: '/pages/loading/index',
+      },
+      {
+        title: 'overlay',
+        page: '/pages/overlay/index',
+      },
+      {
+        title: 'sticky',
+        page: '/pages/sticky/index',
+      },
+      {
+        title: 'cascader',
+        page: '/pages/cascader/index',
+      },
+      {
         title: 'icon',
         page: '/pages/icon/index',
       },

@@ -1,6 +1,6 @@
 import fs from 'fs'
 import type { Config } from 'tailwindcss'
-import colors, { gray } from 'tailwindcss/colors'
+import colors from 'tailwindcss/colors'
 
 const presets = [] as Config[]
 
